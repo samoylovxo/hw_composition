@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { PageHome } from "./pages/Home";
+import { PageCards } from "./pages/Cards";
+import { PageDecomposition } from "./pages/Decomposition";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PageHome />} />
+        <Route path="/cards" element={<PageCards />} />
+        <Route path="/decomposition" element={<PageDecomposition />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
-export default App;
+export { App };
